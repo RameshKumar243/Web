@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <h1 style="background-color: rgb(31, 80, 120);text-align:
+         center;">Login or Signup </h1>
+      <br><br><br>
+      <center>
+         <font size ="4">
+      </center>
+   </head>
+   <body bgcolor="bisque">
+      
+      <center>
+         <form onsubmit="return fun()">
+            <br><br><br>
+            Username : <input type="text" id="name" value="">
+            <span id="msg" style="color:red"></span><br><br><br>
+            Password : <input type="password" id="pwd" value="">
+            <span id="msg1" style="color:red"></span><br><br><br>
+            <input type="submit" value="Submit">
+            <a href="forgotpswd.html" target="C"><input type="button"
+               value="Forget Password"></a>
+            <a href="register.html" target="C"><input type="button"
+               value="Sign Up"></a>
+         </form>
+      </center>
+   </body>
+   <script>
+   function fun() {
+ 	var a = document.getElementById("name").value;
+ 	var b = document.getElementById("pwd").value;
+ 	if (a == null || a == "") {
+ 		document.getElementById("msg").innerHTML = "* Please enter username"
+
+ 		return false
+ 	}
+ 	if (b == null || b == "") {
+ 		document.getElementById("msg1").innerHTML = "*Please enter password"
+
+ 		return false
+ 	}
+ 	if (b.length < 5) {
+ 		document.getElementById("msg1").innerHTML = "*Password should be greaterthan 5 characters "
+ 		return false
+ 	}
+ 	if (b.lenght > 25) {
+ 		document.getElementById("msg1").innerHTML = "*Password should be less than 25 characters "
+ 		return false
+ 	}
+ }
+ </script>
+</html>

@@ -1,0 +1,84 @@
+<html>
+  <head>
+    <h1 style="background-color: rgb(31, 80, 120);text-align:
+center;">Registration Page </h1>
+    <br>
+    <br>
+    <br>
+  </head>
+  <body bgcolor="bisque">
+    <center>
+      <form onsubmit="return myfun()"> Name : <input type="text" id="name" value="">
+        <span id="message2" style="color:red"></span>
+        </br>
+        </br> New Password : <input type="password" id="passwords" value="">
+        <span id="message" style="color:red"></span>
+        </br>
+        </br> Confirm Password : <input type="password" id="passwordss" value="">
+        <span id="messages" style="color:red"></span>
+        </br>
+        </br> Email-id : <input type="text" id="email" value="">
+        <span id="message3" style="color:red"></span>
+        </br>
+        </br> Mobile : <input type="number" id="mb" value="">
+        <span id="message4" style="color:red"></span>
+        </br>
+        </br> Address : <input type="text" id="address" value="">
+        <span id="message5" style="color:red"></span>
+        </br>
+        </br>
+        <input type="submit" value="Register">
+        </a>
+      </form>
+    </center>
+  </body>
+  <script>
+  function myfun() {
+    var n = document.getElementById("name").value;
+    var a = document.getElementById("passwords").value;
+    var b = document.getElementById("passwordss").value;
+    var e = document.getElementById("email").value;
+    var m = document.getElementById("mb").value;
+    var add = document.getElementById("address").value;
+    if (n == null || n == "") {
+        document.getElementById("message2").innerHTML = "* Name can't be empty";
+
+        return false
+    }
+    if (a == null || a == "") {
+        document.getElementById("message").innerHTML = "* Please Fill 0Password";
+
+        return false
+    } else if (b == null || b == "") {
+
+        document.getElementById("messages").innerHTML = "* Please re-enter the Password";
+
+        return false
+    } else if (a.length < 5) {
+        document.getElementById("message").innerHTML = "* Password lenght should be greater than 5";
+        return false
+    } else if (a.length > 25) {
+        document.getElementById("message").innerHTML = "* Password lenght should be less than 25";
+        return false
+    } else if (a != b) {
+        document.getElementById("message").innerHTML = "* Passwords are not same";
+
+        return false
+    } else if (e == null) {
+        document.getElementById("message3").innerHTML = "* Please enter Email";
+
+        return false
+    } else if (m == "") {
+        document.getElementById("message4").innerHTML = "* please enter mobile number";
+
+        return false
+    } else if (add == null) {
+        document.getElementById("message5").innerHTML = "please enter Address";
+
+        return false
+    } else if (a == b) {
+        alert("Successfully Registered");
+    }
+} 
+</script>
+</html>
